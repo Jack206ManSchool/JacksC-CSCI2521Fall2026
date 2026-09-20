@@ -15,16 +15,32 @@ int main() {
 
 	int userInput;
 
+	float length = 0.0;
+	float width = 0.0;
+	float radius = 0.0;
+	float result = 0.0;
+
 	cout << "Menu" << endl;
 	cout << "1. Calculate the Area of a Rectangle" << endl;
 	cout << "2. Calculate the Area of a Circle" << endl;
 	cout << "3. Quit" << endl;
 
+	cout << "Please make a menu selection : ";
 	cin >> userInput;
 
 	switch (userInput) {
 	
 		case 1:
+
+				cout << "Please enter the length of the rectangle : ";
+				cin >> length;
+
+				cout << "Please enter the width of the rectangle : ";
+				cin >> width;
+
+				result = length * width;
+
+				cout << "The area of the rectangle is : " << result << endl;
 
 			break;
 		case 2:
