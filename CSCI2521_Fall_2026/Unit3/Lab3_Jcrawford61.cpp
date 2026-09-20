@@ -29,7 +29,6 @@ int main() {
 	cin >> userInput;
 
 	switch (userInput) {
-	
 		case 1:
 
 				cout << "Please enter the length of the rectangle : ";
@@ -45,8 +44,14 @@ int main() {
 			break;
 		case 2:
 
-			break;
+			cout << "Please enter the radius of the circle : ";
+			cin >> radius;
 
+			result = PI_VAL * (radius * radius);
+
+			cout << "The area of the circle is : " << result << endl; 
+
+			break;
 		default:
 			cout << "Sorry, but that's not a valid option..." << endl;
 		// Note: Fallthrough here is intentional
@@ -54,7 +59,6 @@ int main() {
 			exit(0);
 			break;
 	}
-
 
 	return 0;
 }
