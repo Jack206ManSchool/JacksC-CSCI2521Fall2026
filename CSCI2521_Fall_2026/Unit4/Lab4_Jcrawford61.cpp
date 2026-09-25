@@ -10,24 +10,28 @@ using namespace std;
 
 int main() {
 
-	int inputDigitX = 0;
-	int inputDigitY = 0;
+	int inputDigit = 0;
+	
+	cout << "Please enter the maximum digit for the multiplication table." << endl;
+	cout << "The digit must be greater than 4 and less than 10" << endl;
 
 	do {
-		cin >> inputDigitX;
-		if (inputDigitX > 4 && inputDigitX < 10) {
+		cout << "Max Digit : ";
+		cin >> inputDigit;
+		if (inputDigit > 4 && inputDigit < 10) {
 			break;
 		}
+		inputDigit = 0;
+
 		cout << "Error : The max digit must be greater than 4 and less than 10. Please try again." << endl;
 	} while (true);
 
-	//Please enter the maximum digit for the multiplication table.
-	//	The digit must be greater than 4 and less than 10
-	//	Max Digit : 4
-	//	
-	//	Max Digit : 10
-	//	Error : The max digit must be greater than 4 and less than 10. Please try again.
-	//	Max Digit : 9
+	for (int i1 = 1; i1 <= inputDigit; i1++) {
+		for (int i2 = 1; i2 <= inputDigit; i2++) {
+			cout << (i1 * i2) << "\t";
+		}
+		cout << endl;
+	}
 
 	return 0;
 }
