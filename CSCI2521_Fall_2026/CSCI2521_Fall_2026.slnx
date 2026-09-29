@@ -3,6 +3,7 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
+  <Project Path="Lab1_Jcrawford61/Lab1_Jcrawford61.vcxproj" Id="8a13a5fa-e6c3-4d60-9173-a5f3433edd36" />
   <Project Path="Unit1/Unit1.vcxproj" Id="4cd58a75-721f-4243-a660-aa479da362f7" />
   <Project Path="Unit2/Unit2.vcxproj" Id="a63df3c5-f7e7-4692-a9dd-8a4e5d833e0b" />
   <Project Path="Unit3/Unit3.vcxproj" Id="0a04a5a4-bdb9-48c1-b062-10aa3a3662cc" />
