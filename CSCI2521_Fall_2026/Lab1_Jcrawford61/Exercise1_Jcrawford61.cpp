@@ -39,14 +39,43 @@ int main() {
 		UPC starts the sequence and is the 1st digit to add in this odd sum
 		*/
 
-		int temp = ((manuNum / 1000) % 10);
-		cout << temp;
+		cout << firstNum << ' ';
+
+		int temp1 = ((manuNum / 1000) % 10);
+		cout << temp1 << ' ';
+
+		int temp2 = ((manuNum / 10) % 10);
+		cout << temp2 << ' ';
+
+		int temp3 = ((prodNum / 10000) % 10);
+		cout << temp3 << ' ';
+
+		int temp4 = ((prodNum / 100) % 10);
+		cout << temp4 << ' ';
+
+		int temp5 = (prodNum % 10);
+		cout << temp5 << endl;
 
 		/*
 		2. Add the digits in the even - numbered positions (second, fourth, sixth, etc.)
 		to the result in step 1. Do not include the last small number in the sum as that
 		value is the checkdigit.
 		*/
+
+		int temp6 = ((manuNum / 10000) % 10);
+		cout << temp6 << ' ';
+
+		int temp7 = ((manuNum / 100) % 10);
+		cout << temp7 << ' ';
+
+		int temp8 = (manuNum % 10);
+		cout << temp8 << ' ';
+
+		int temp9 = ((prodNum / 1000) % 10);
+		cout << temp9 << ' ';
+
+		int temp10 = ((prodNum / 10) % 10);
+		cout << temp10 << endl;
 
 		/*
 		3. Take the result from step2 and modulo 10 (i.e.the remainder when divided by 10…10
