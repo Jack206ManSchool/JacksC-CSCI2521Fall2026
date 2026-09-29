@@ -39,6 +39,8 @@ int main() {
 		UPC starts the sequence and is the 1st digit to add in this odd sum
 		*/
 
+		int result1 = 0;
+
 		cout << firstNum << ' ';
 
 		int temp1 = ((manuNum / 1000) % 10);
@@ -55,6 +57,8 @@ int main() {
 
 		int temp5 = (prodNum % 10);
 		cout << temp5 << endl;
+
+		result1 = firstNum + temp1 + temp2 + temp3 + temp4 + temp5;
 
 		/*
 		2. Add the digits in the even - numbered positions (second, fourth, sixth, etc.)
@@ -77,10 +81,15 @@ int main() {
 		int temp10 = ((prodNum / 10) % 10);
 		cout << temp10 << endl;
 
+		int result2 = result1 + temp6 + temp7 + temp8 + temp9 + temp10;
+		int result22 = temp6 + temp7 + temp8 + temp9 + temp10;
+
 		/*
 		3. Take the result from step2 and modulo 10 (i.e.the remainder when divided by 10…10
 		goes into 58 5 times with 8 leftover).
 		*/
+
+		int result3 = result2 % 10;
 
 		/*
 		4. If the modulo result is not zero, subtract the result from ten. The difference is the
@@ -89,11 +98,25 @@ int main() {
 		is the unknown check digit, x can be calculated by
 		*/
 
+		int result4 = 10;
+
+		if (result3 != 0) {
+			result4 -= result3;
+		}
+		else {
+			result4 = 0;
+		}
+
 		// adding the odd - position digits(0 + 1 + 0 + 2 + 1 + 3 = 7),
+		int result5 = result1;
 		// multiplying by three(7 × 3 = 21),
+		result5 *= 3;
 		// adding this result to the sum of the even - position digits(21 + (5 + 5 + 0 + 4 + 6) = 41),
+		result5 += result22;
 		// calculating modulo ten(41 mod 10 = 1),
+		result5 %= 10;
 		// subtracting from ten(10 − 1 = 9).
+		int result6 = 10 - result5;
 
 		/*
 		The check digit is thus 9. Confirm the check digit with the first UPC image above,
@@ -101,6 +124,14 @@ int main() {
 		on the UPC barcode itself.
 		*/
 
+		if (result6 == lastNum) {
+			cout << "YAY!" << endl;
+		}
+		else {
+			cout << "NAY!" << endl;
+		}
+
+		cout << "do you have a number to test? (y or n): ";
 		cin >> yOrN;
 
 	}
