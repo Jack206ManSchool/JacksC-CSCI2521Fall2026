@@ -23,57 +23,11 @@ void getInputs(int& fN, int& lN, int& mN, int& pN) {
 }
 
 int getOdd(int fN, int mN, int pN) {
-
-	/*
-	1. Add the digits in the odd - numbered positions (first, third, fifth, etc.)
-	together and multiply by three. Note : the small number on the left of the
-	UPC starts the sequence and is the 1st digit to add in this odd sum
-	*/
-
-	cout << fN << ' ';
-
-	int temp1 = ((mN / 1000) % 10);
-	cout << temp1 << ' ';
-
-	int temp2 = ((mN / 10) % 10);
-	cout << temp2 << ' ';
-
-	int temp3 = ((pN / 10000) % 10);
-	cout << temp3 << ' ';
-
-	int temp4 = ((pN / 100) % 10);
-	cout << temp4 << ' ';
-
-	int temp5 = (pN % 10);
-	cout << temp5 << endl;
-
-	return (fN + temp1 + temp2 + temp3 + temp4 + temp5);
+	return (fN + ((mN / 1000) % 10) + ((mN / 10) % 10) + ((pN / 10000) % 10) + ((pN / 100) % 10) + (pN % 10));
 }
 
 int getEven(int mN, int pN) {
-
-	/*
-	2. Add the digits in the even - numbered positions (second, fourth, sixth, etc.)
-	to the result in step 1. Do not include the last small number in the sum as that
-	value is the checkdigit.
-	*/
-
-	int temp6 = ((mN / 10000) % 10);
-	cout << temp6 << ' ';
-
-	int temp7 = ((mN / 100) % 10);
-	cout << temp7 << ' ';
-
-	int temp8 = (mN % 10);
-	cout << temp8 << ' ';
-
-	int temp9 = ((pN / 1000) % 10);
-	cout << temp9 << ' ';
-
-	int temp10 = ((pN / 10) % 10);
-	cout << temp10 << endl;
-
-	return (temp6 + temp7 + temp8 + temp9 + temp10);
+	return (((mN / 10000) % 10) + ((mN / 100) % 10) + (mN % 10) + ((pN / 1000) % 10) + ((pN / 10) % 10));
 }
 
 int main() {
@@ -134,11 +88,13 @@ int main() {
 		on the UPC barcode itself.
 		*/
 
+		cout << endl << endl;
+
 		if (result6 == lastNum) {
-			cout << "YAY!" << endl;
+			cout << "UCP code " << firstNum << manuNum << prodNum << lastNum << " is valid." << endl;
 		}
 		else {
-			cout << "NAY!" << endl;
+			cout << "Invalid UCP code." << endl;
 		}
 
 		cout << "do you have a number to test? (y or n): ";
