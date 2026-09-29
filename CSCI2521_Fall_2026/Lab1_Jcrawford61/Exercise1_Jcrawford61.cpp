@@ -8,6 +8,28 @@
 
 using namespace std;
 
+void getInputs(int& fN, int& lN, int& mN, int& pN) {
+	cout << "Enter the very first number of the UPC: ";
+	cin >> fN;
+
+	cout << "Enter the very last number of the UPC: ";
+	cin >> lN;
+
+	cout << "Enter your Manufacturer number (the first set of 5 digits): ";
+	cin >> mN;
+
+	cout << "Enter your Pruduct number (the second set of 5 digits): ";
+	cin >> pN;
+}
+
+int getEven() {
+	return 0;
+}
+
+int getOdd() {
+	return 0;
+}
+
 int main() {
 	
 	char yOrN = ' ';
@@ -21,17 +43,7 @@ int main() {
 
 	while (yOrN == 'y' || yOrN == 'Y') {
 
-		cout << "Enter the very first number of the UPC: ";
-		cin >> firstNum;
-
-		cout << "Enter the very last number of the UPC: ";
-		cin >> lastNum;
-
-		cout << "Enter your Manufacturer number (the first set of 5 digits): ";
-		cin >> manuNum;
-
-		cout << "Enter your Pruduct number (the second set of 5 digits): ";
-		cin >> prodNum;
+		getInputs(firstNum, lastNum, manuNum, prodNum);
 
 		/*
 		1. Add the digits in the odd - numbered positions (first, third, fifth, etc.)
