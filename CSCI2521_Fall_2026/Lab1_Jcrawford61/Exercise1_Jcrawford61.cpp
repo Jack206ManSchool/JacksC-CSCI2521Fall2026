@@ -18,16 +18,62 @@ void getInputs(int& fN, int& lN, int& mN, int& pN) {
 	cout << "Enter your Manufacturer number (the first set of 5 digits): ";
 	cin >> mN;
 
-	cout << "Enter your Pruduct number (the second set of 5 digits): ";
+	cout << "Enter your Product number (the second set of 5 digits): ";
 	cin >> pN;
 }
 
-int getEven() {
-	return 0;
+int getOdd(int fN, int mN, int pN) {
+
+	/*
+	1. Add the digits in the odd - numbered positions (first, third, fifth, etc.)
+	together and multiply by three. Note : the small number on the left of the
+	UPC starts the sequence and is the 1st digit to add in this odd sum
+	*/
+
+	cout << fN << ' ';
+
+	int temp1 = ((mN / 1000) % 10);
+	cout << temp1 << ' ';
+
+	int temp2 = ((mN / 10) % 10);
+	cout << temp2 << ' ';
+
+	int temp3 = ((pN / 10000) % 10);
+	cout << temp3 << ' ';
+
+	int temp4 = ((pN / 100) % 10);
+	cout << temp4 << ' ';
+
+	int temp5 = (pN % 10);
+	cout << temp5 << endl;
+
+	return (fN + temp1 + temp2 + temp3 + temp4 + temp5);
 }
 
-int getOdd() {
-	return 0;
+int getEven(int mN, int pN) {
+
+	/*
+	2. Add the digits in the even - numbered positions (second, fourth, sixth, etc.)
+	to the result in step 1. Do not include the last small number in the sum as that
+	value is the checkdigit.
+	*/
+
+	int temp6 = ((mN / 10000) % 10);
+	cout << temp6 << ' ';
+
+	int temp7 = ((mN / 100) % 10);
+	cout << temp7 << ' ';
+
+	int temp8 = (mN % 10);
+	cout << temp8 << ' ';
+
+	int temp9 = ((pN / 1000) % 10);
+	cout << temp9 << ' ';
+
+	int temp10 = ((pN / 10) % 10);
+	cout << temp10 << endl;
+
+	return (temp6 + temp7 + temp8 + temp9 + temp10);
 }
 
 int main() {
@@ -45,63 +91,15 @@ int main() {
 
 		getInputs(firstNum, lastNum, manuNum, prodNum);
 
-		/*
-		1. Add the digits in the odd - numbered positions (first, third, fifth, etc.)
-		together and multiply by three. Note : the small number on the left of the
-		UPC starts the sequence and is the 1st digit to add in this odd sum
-		*/
-
-		int result1 = 0;
-
-		cout << firstNum << ' ';
-
-		int temp1 = ((manuNum / 1000) % 10);
-		cout << temp1 << ' ';
-
-		int temp2 = ((manuNum / 10) % 10);
-		cout << temp2 << ' ';
-
-		int temp3 = ((prodNum / 10000) % 10);
-		cout << temp3 << ' ';
-
-		int temp4 = ((prodNum / 100) % 10);
-		cout << temp4 << ' ';
-
-		int temp5 = (prodNum % 10);
-		cout << temp5 << endl;
-
-		result1 = firstNum + temp1 + temp2 + temp3 + temp4 + temp5;
-
-		/*
-		2. Add the digits in the even - numbered positions (second, fourth, sixth, etc.)
-		to the result in step 1. Do not include the last small number in the sum as that
-		value is the checkdigit.
-		*/
-
-		int temp6 = ((manuNum / 10000) % 10);
-		cout << temp6 << ' ';
-
-		int temp7 = ((manuNum / 100) % 10);
-		cout << temp7 << ' ';
-
-		int temp8 = (manuNum % 10);
-		cout << temp8 << ' ';
-
-		int temp9 = ((prodNum / 1000) % 10);
-		cout << temp9 << ' ';
-
-		int temp10 = ((prodNum / 10) % 10);
-		cout << temp10 << endl;
-
-		int result2 = result1 + temp6 + temp7 + temp8 + temp9 + temp10;
-		int result22 = temp6 + temp7 + temp8 + temp9 + temp10;
+		int result1 = getOdd(firstNum, manuNum, prodNum);
+		int result2 = getEven(manuNum, prodNum);
 
 		/*
 		3. Take the result from step2 and modulo 10 (i.e.the remainder when divided by 10…10
 		goes into 58 5 times with 8 leftover).
 		*/
 
-		int result3 = result2 % 10;
+		int result3 = (result1 + result2) % 10;
 
 		/*
 		4. If the modulo result is not zero, subtract the result from ten. The difference is the
@@ -124,7 +122,7 @@ int main() {
 		// multiplying by three(7 × 3 = 21),
 		result5 *= 3;
 		// adding this result to the sum of the even - position digits(21 + (5 + 5 + 0 + 4 + 6) = 41),
-		result5 += result22;
+		result5 += result2;
 		// calculating modulo ten(41 mod 10 = 1),
 		result5 %= 10;
 		// subtracting from ten(10 − 1 = 9).
