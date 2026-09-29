@@ -13,18 +13,34 @@ int main() {
 	char yOrN = ' ';
 	int firstNum = 0;
 	int lastNum = 0;
+	int manuNum = 0;
+	int prodNum = 0;
 
-	cout << "do you have a number to test? (y or n)" << endl;
+	cout << "do you have a number to test? (y or n): ";
 	cin >> yOrN;
 
 	while (yOrN == 'y' || yOrN == 'Y') {
-		cin >> yOrN;
+
+		cout << "Enter the very first number of the UPC: ";
+		cin >> firstNum;
+
+		cout << "Enter the very last number of the UPC: ";
+		cin >> lastNum;
+
+		cout << "Enter your Manufacturer number (the first set of 5 digits): ";
+		cin >> manuNum;
+
+		cout << "Enter your Pruduct number (the second set of 5 digits): ";
+		cin >> prodNum;
 
 		/*
 		1. Add the digits in the odd - numbered positions (first, third, fifth, etc.)
 		together and multiply by three. Note : the small number on the left of the
 		UPC starts the sequence and is the 1st digit to add in this odd sum
 		*/
+
+		int temp = ((manuNum / 1000) % 10);
+		cout << temp;
 
 		/*
 		2. Add the digits in the even - numbered positions (second, fourth, sixth, etc.)
@@ -55,6 +71,9 @@ int main() {
 		notice the last small digit is 9 ? That last small digit is the checksum as shown
 		on the UPC barcode itself.
 		*/
+
+		cin >> yOrN;
+
 	}
 	
 	return 0;
