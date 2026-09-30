@@ -8,27 +8,9 @@
 
 using namespace std;
 
-void getInputs(int& fN, int& lN, int& mN, int& pN) {
-	cout << "Enter the very first number of the UPC: ";
-	cin >> fN;
-
-	cout << "Enter the very last number of the UPC: ";
-	cin >> lN;
-
-	cout << "Enter your Manufacturer number (the first set of 5 digits): ";
-	cin >> mN;
-
-	cout << "Enter your Product number (the second set of 5 digits): ";
-	cin >> pN;
-}
-
-int getOdd(int fN, int mN, int pN) {
-	return (fN + ((mN / 1000) % 10) + ((mN / 10) % 10) + ((pN / 10000) % 10) + ((pN / 100) % 10) + (pN % 10));
-}
-
-int getEven(int mN, int pN) {
-	return (((mN / 10000) % 10) + ((mN / 100) % 10) + (mN % 10) + ((pN / 1000) % 10) + ((pN / 10) % 10));
-}
+void getInputs(int& fN, int& lN, int& mN, int& pN);
+int getOdd(int fN, int mN, int pN);
+int getEven(int mN, int pN);
 
 int main() {
 	
@@ -47,29 +29,6 @@ int main() {
 
 		int result1 = getOdd(firstNum, manuNum, prodNum);
 		int result2 = getEven(manuNum, prodNum);
-
-		/*
-		3. Take the result from step2 and modulo 10 (i.e.the remainder when divided by 10…10
-		goes into 58 5 times with 8 leftover).
-		*/
-
-		int result3 = (result1 + result2) % 10;
-
-		/*
-		4. If the modulo result is not zero, subtract the result from ten. The difference is the
-		calculated check digit. If the module result is 0, then 0 is the calculated check digit.
-		For example, from the first image above, the UPC - A barcode is "05150024163 9" where x
-		is the unknown check digit, x can be calculated by
-		*/
-
-		int result4 = 10;
-
-		if (result3 != 0) {
-			result4 -= result3;
-		}
-		else {
-			result4 = 0;
-		}
 
 		// adding the odd - position digits(0 + 1 + 0 + 2 + 1 + 3 = 7),
 		int result5 = result1;
@@ -102,5 +61,30 @@ int main() {
 
 	}
 	
+	cout << endl;
+
 	return 0;
+}
+
+
+void getInputs(int& fN, int& lN, int& mN, int& pN) {
+	cout << "Enter the very first number of the UPC: ";
+	cin >> fN;
+
+	cout << "Enter the very last number of the UPC: ";
+	cin >> lN;
+
+	cout << "Enter your Manufacturer number (the first set of 5 digits): ";
+	cin >> mN;
+
+	cout << "Enter your Product number (the second set of 5 digits): ";
+	cin >> pN;
+}
+
+int getOdd(int fN, int mN, int pN) {
+	return (fN + ((mN / 1000) % 10) + ((mN / 10) % 10) + ((pN / 10000) % 10) + ((pN / 100) % 10) + (pN % 10));
+}
+
+int getEven(int mN, int pN) {
+	return (((mN / 10000) % 10) + ((mN / 100) % 10) + (mN % 10) + ((pN / 1000) % 10) + ((pN / 10) % 10));
 }
