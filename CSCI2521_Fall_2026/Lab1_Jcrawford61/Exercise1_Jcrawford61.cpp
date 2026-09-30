@@ -115,9 +115,9 @@ string getFullCode(int fN, int lN, int mN, int pN) {
 
 void printIsValid(int fR, int lN, string code) {
 	if (fR == lN) {
-		cout << endl << endl << "UCP code " << code << " is valid." << endl;
+		cout << endl << endl << "UPC code " << code << " is valid." << endl;
 	}
 	else {
-		cout << endl << endl << "Invalid UCP code." << endl;
+		cout << endl << endl << "Invalid UPC code." << endl;
 	}
 }
