@@ -5,55 +5,56 @@
  * @brief This program validates UPC-A barcodes performing the UPC-A check digit algorithm.
  */
 #include<iostream>
+#include<string>
 
 using namespace std;
 
 void getInputs(int& fN, int& lN, int& mN, int& pN);
+string getFullCode(int fN, int lN, int mN, int pN);
 int getOdd(int fN, int mN, int pN);
 int getEven(int mN, int pN);
 int getDigit(int num, int div);
+void printIsValid(int fR, int lN, string code);
 
 int main() {
 	
-	char yOrN = ' ';
+	char yOrN = 'y';
 	int firstNum = 0;
 	int lastNum = 0;
 	int manuNum = 0;
 	int prodNum = 0;
 
-	cout << "do you have a number to test? (y or n): ";
-	cin >> yOrN;
+	while (yOrN != 'n' && yOrN != 'N') {
 
-	while (yOrN == 'y' || yOrN == 'Y') {
-
-		getInputs(firstNum, lastNum, manuNum, prodNum);
-
-		// adding the odd - position digits(0 + 1 + 0 + 2 + 1 + 3 = 7),
-		int result = getOdd(firstNum, manuNum, prodNum);
-		// multiplying by three(7 × 3 = 21),
-		result *= 3;
-		// adding this result to the sum of the even - position digits(21 + (5 + 5 + 0 + 4 + 6) = 41),
-		result += getEven(manuNum, prodNum);
-		// calculating modulo ten(41 mod 10 = 1),
-		result %= 10;
-		// subtracting from ten(10 − 1 = 9).
-		int finalResult = 10 - result;
-
-		if (finalResult == lastNum) {
-			// TODO: Fix Shortened Number Rendering
-			cout << endl << endl << "UCP code " << firstNum << manuNum << prodNum << lastNum << " is valid." << endl;
+		if (yOrN == 'y' || yOrN == 'Y') {
+			cout << "Do you have a number to test? (y or n): ";
 		}
 		else {
-			cout << endl << endl << "Invalid UCP code." << endl;
+			cout << "That is not an answer! Please type y or n: ";
 		}
 
-		cout << "do you have a number to test? (y or n): ";
 		cin >> yOrN;
+
+		if (yOrN == 'y' || yOrN == 'Y') {
+			getInputs(firstNum, lastNum, manuNum, prodNum);
+
+			// adding the odd - position digits
+			int result = getOdd(firstNum, manuNum, prodNum);
+			// multiplying by three
+			result *= 3;
+			// adding this result to the sum of the even - position digits
+			result += getEven(manuNum, prodNum);
+			// calculating modulo ten
+			result %= 10;
+			// subtract from ten
+			int finalResult = 10 - result;
+
+			printIsValid(finalResult, lastNum, getFullCode(firstNum, lastNum, manuNum, prodNum));
+		}
 
 	}
 	
 	cout << endl;
-
 	return 0;
 }
 
@@ -89,4 +90,34 @@ int getEven(int mN, int pN) {
 		getDigit(mN, 1) + 
 		getDigit(pN, 1000) + 
 		getDigit(pN, 10);
+}
+
+string getFullCode(int fN, int lN, int mN, int pN) {
+	string code = to_string(fN);
+
+	string mNString = to_string(mN);
+	while (mNString.size() < 5) {
+		mNString.insert(0, 1, '0');
+	}
+
+	code.append(mNString);
+
+	string pNString = to_string(pN);
+	while (pNString.size() < 5) {
+		pNString.insert(0, 1, '0');
+	}
+
+	code.append(pNString);
+	code.append(to_string(lN));
+
+	return code;
+}
+
+void printIsValid(int fR, int lN, string code) {
+	if (fR == lN) {
+		cout << endl << endl << "UCP code " << code << " is valid." << endl;
+	}
+	else {
+		cout << endl << endl << "Invalid UCP code." << endl;
+	}
 }
