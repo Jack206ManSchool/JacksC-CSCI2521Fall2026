@@ -11,6 +11,7 @@ using namespace std;
 void getInputs(int& fN, int& lN, int& mN, int& pN);
 int getOdd(int fN, int mN, int pN);
 int getEven(int mN, int pN);
+int getDigit(int num, int div);
 
 int main() {
 	
@@ -38,12 +39,6 @@ int main() {
 		// subtracting from ten(10 − 1 = 9).
 		int finalResult = 10 - result;
 
-		/*
-		The check digit is thus 9. Confirm the check digit with the first UPC image above,
-		notice the last small digit is 9 ? That last small digit is the checksum as shown
-		on the UPC barcode itself.
-		*/
-
 		if (finalResult == lastNum) {
 			// TODO: Fix Shortened Number Rendering
 			cout << endl << endl << "UCP code " << firstNum << manuNum << prodNum << lastNum << " is valid." << endl;
@@ -62,7 +57,6 @@ int main() {
 	return 0;
 }
 
-
 void getInputs(int& fN, int& lN, int& mN, int& pN) {
 	cout << "Enter the very first number of the UPC: ";
 	cin >> fN;
@@ -74,10 +68,25 @@ void getInputs(int& fN, int& lN, int& mN, int& pN) {
 	cin >> pN;
 }
 
+int getDigit(int num, int div) {
+	return ((num / div) % 10);
+}
+
 int getOdd(int fN, int mN, int pN) {
-	return (fN + ((mN / 1000) % 10) + ((mN / 10) % 10) + ((pN / 10000) % 10) + ((pN / 100) % 10) + (pN % 10));
+	return 
+		fN + 
+		getDigit(mN, 1000) + 
+		getDigit(mN, 10) + 
+		getDigit(pN, 10000) + 
+		getDigit(pN, 100) + 
+		getDigit(pN, 1);
 }
 
 int getEven(int mN, int pN) {
-	return (((mN / 10000) % 10) + ((mN / 100) % 10) + (mN % 10) + ((pN / 1000) % 10) + ((pN / 10) % 10));
+	return 
+		getDigit(mN, 10000) + 
+		getDigit(mN, 100) + 
+		getDigit(mN, 1) + 
+		getDigit(pN, 1000) + 
+		getDigit(pN, 10);
 }
