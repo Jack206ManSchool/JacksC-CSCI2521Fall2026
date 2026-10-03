@@ -8,12 +8,19 @@
 
 using namespace std;
 
+void printInputValidationError();
+bool isMaxDigitInputValid(int input);
+int getMaxDigitInput();
+void printMultiplicationTable(int maxDigit);
+int main();
+
+
+
 /**
  * @brief Checks if the input is within the valid range.
  * @param input The integer value to be validated.
  * @return True if the input is valid (4 < input < 10), false otherwise.
  */
-
 int main() {
 
 	int inputDigit = 0;
