@@ -8,4 +8,5 @@
   <Project Path="Unit2/Unit2.vcxproj" Id="a63df3c5-f7e7-4692-a9dd-8a4e5d833e0b" />
   <Project Path="Unit3/Unit3.vcxproj" Id="0a04a5a4-bdb9-48c1-b062-10aa3a3662cc" />
   <Project Path="Unit4/Unit4.vcxproj" Id="9bf2c3b9-b906-4c6d-8f4a-021c36454358" />
+  <Project Path="Unit5/Unit5.vcxproj" Id="6ac0ec1a-8b12-4c64-a08b-caa3ba3b6df7" />
 </Solution>
