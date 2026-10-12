@@ -18,13 +18,8 @@ void vectorSolution();
  */
 int main() {
 
-	//Behavior :
-	//	Calls arraySolution().
-	//	Calls vectorSolution().
-	//	Returns 0.
-
-
-
+	arraySolution();
+	vectorSolution();
 	
 	return 0;
 }
@@ -36,15 +31,27 @@ int main() {
  */
 void arraySolution() {
 
-	//Behavior :
 	//	Define a static array with a constant size of 10.
+	const int arrayLength = 10;
+	int inputScores[arrayLength];
+
 	//	Prompt the user to enter up to 10 integer test scores, one at a time.
+	for (int i = 0; i < arrayLength; i++) {
+		cin >> inputScores[i];
+	}
+	
+	for (int i : inputScores) {
+		cout << i << endl;
+	}
+
 	//	Validate that each score is between 0 and 100.
+	
 	//	Store valid scores in the array.
-	//	After 10 scores are entered, calculate and display :
-	//	The average score.
-	//	The highest score.
-	//	The lowest score.
+	
+	//	After 10 scores are entered, calculate and display:
+	//		The average score.
+	//		The highest score.
+	//		The lowest score.
 
 }
 
@@ -56,16 +63,21 @@ void arraySolution() {
  */
 void vectorSolution(){
 
-	//Behavior :
 	//	Declare an empty vector<int>.
+	
 	//	Prompt the user to enter scores one at a time.
+	
 	//	Continue accepting scores until the user enters - 1 to indicate they are done.
+	
 	//	Validate that any value other than - 1 is between 0 and 100.
+	
 	//	Use push_back() to store valid scores in the vector.
+	
 	//	After input is complete, calculate and display:
-	//The average score.
-	//The highest score.
-	//The lowest score.
+	//		The average score.
+	//		The highest score.
+	//		The lowest score.
+	
 	//Sort the scores in ascending order using std::sort(requires <algorithm>) and display the sorted list.
 
 }

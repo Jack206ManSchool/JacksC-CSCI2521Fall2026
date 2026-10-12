@@ -9,4 +9,5 @@
   <Project Path="Unit3/Unit3.vcxproj" Id="0a04a5a4-bdb9-48c1-b062-10aa3a3662cc" />
   <Project Path="Unit4/Unit4.vcxproj" Id="9bf2c3b9-b906-4c6d-8f4a-021c36454358" />
   <Project Path="Unit5/Unit5.vcxproj" Id="6ac0ec1a-8b12-4c64-a08b-caa3ba3b6df7" />
+  <Project Path="Unit6/Unit6.vcxproj" Id="45d863f1-cde7-47fb-804a-fee196b75ecf" />
 </Solution>
