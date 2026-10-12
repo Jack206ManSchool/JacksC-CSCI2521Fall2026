@@ -36,19 +36,21 @@ void arraySolution() {
 	int inputScores[arrayLength];
 
 	//	Prompt the user to enter up to 10 integer test scores, one at a time.
+	cout << "Please enter 10 integer test scores: " << endl;
 	for (int i = 0; i < arrayLength; i++) {
 		cin >> inputScores[i];
 	}
 	
 	//	Validate that each score is between 0 and 100, Store valid scores in the array.
 	int correctedScores[arrayLength];
-	//int arrayLength2 = 0;
+	int arrayLength2 = 0;
 	for (int i = 0; i < arrayLength; i++) {
 		if (inputScores[i] >= 0 && inputScores[i] <= 100) {
 			correctedScores[i] = inputScores[i];
+			arrayLength2 += 1;
 		}
 		else {
-			correctedScores[i] = NULL;
+			correctedScores[i] = 0;
 		}
 	}
 
@@ -60,8 +62,15 @@ void arraySolution() {
 	int highestScore = correctedScores[0];
 	int lowestScore = correctedScores[0];
 	for (int i = 0; i < arrayLength; i++) {
-
+		averageScore += correctedScores[i];
+		if (correctedScores[i] > highestScore) {
+			highestScore = correctedScores[i];
+		}
+		if (correctedScores[i] < lowestScore) {
+			lowestScore = correctedScores[i];
+		}
 	}
+	averageScore /= arrayLength2;
 
 	cout << "The average score: " << averageScore << endl;
 	cout << "The highest score: " << highestScore << endl;
