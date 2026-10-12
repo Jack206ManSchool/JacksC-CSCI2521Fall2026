@@ -40,18 +40,37 @@ void arraySolution() {
 		cin >> inputScores[i];
 	}
 	
-	for (int i : inputScores) {
-		cout << i << endl;
+	//	Validate that each score is between 0 and 100, Store valid scores in the array.
+	int correctedScores[arrayLength];
+	//int arrayLength2 = 0;
+	for (int i = 0; i < arrayLength; i++) {
+		if (inputScores[i] >= 0 && inputScores[i] <= 100) {
+			correctedScores[i] = inputScores[i];
+		}
+		else {
+			correctedScores[i] = NULL;
+		}
 	}
 
-	//	Validate that each score is between 0 and 100.
-	
-	//	Store valid scores in the array.
-	
 	//	After 10 scores are entered, calculate and display:
 	//		The average score.
 	//		The highest score.
 	//		The lowest score.
+	int averageScore = correctedScores[0];
+	int highestScore = correctedScores[0];
+	int lowestScore = correctedScores[0];
+	for (int i = 0; i < arrayLength; i++) {
+
+	}
+
+	cout << "The average score: " << averageScore << endl;
+	cout << "The highest score: " << highestScore << endl;
+	cout << "The lowest score: " << lowestScore << endl;
+
+	for (int i : correctedScores) {
+		cout << i << endl;
+	}
+
 
 }
 
