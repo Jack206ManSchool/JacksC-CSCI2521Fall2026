@@ -140,7 +140,10 @@ void vectorSolution(){
 	cout << "The lowest score: " << findMin(inputScores) << endl;
 
 	//Sort the scores in ascending order using std::sort(requires <algorithm>) and display the sorted list.
-	//inputScores = inputScores.sort();
+	sort(inputScores.begin(), inputScores.end());
+	for (int i : inputScores) {
+		cout << i << endl;
+	}
 
 }
 
