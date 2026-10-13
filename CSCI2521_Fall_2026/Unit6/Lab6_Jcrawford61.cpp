@@ -117,10 +117,18 @@ void vectorSolution(){
 			//	Use push_back() to store valid scores in the vector.
 			inputScores.push_back(input);
 		}
-		if (inputScores.size() == 0) {
-			cout << "You must enter at least 1 test score!" << endl;
-			input = 0;
+		else {
+
+			if (input != -1) {
+				cout << "That is not a valid test score!" << endl;
+			}
+			else if (inputScores.size() == 0) {
+				cout << "You must enter at least 1 valid test score!" << endl;
+				input = 0;
+			}
+
 		}
+
 	}
 	
 	//	After input is complete, calculate and display:
@@ -171,8 +179,13 @@ int findMax(const int arr[], int size) {
 	//@return: temp
  */
 int findMax(const vector<int>& inputVec) {
-	
-	return 0;
+	int result = inputVec.at(0);
+	for (int i : inputVec) {
+		if (i > result) {
+			result = i;
+		}
+	}
+	return result;
 }
 
 /**
@@ -189,5 +202,11 @@ int findMin(const int arr[], int size) {
 	//@return: temp
  */
 int findMin(const vector<int>& inputVec) {
-	return 0;
+	int result = inputVec.at(0);
+	for (int i : inputVec) {
+		if (i < result) {
+			result = i;
+		}
+	}
+	return result;
 }
