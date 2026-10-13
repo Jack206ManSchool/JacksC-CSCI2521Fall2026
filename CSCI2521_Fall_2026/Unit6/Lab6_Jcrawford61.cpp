@@ -30,7 +30,7 @@ int findMin(const std::vector<int>&vec);
  */
 int main() {
 
-	//arraySolution();
+	arraySolution();
 	vectorSolution();
 	
 	return 0;
@@ -45,24 +45,21 @@ void arraySolution() {
 
 	//	Define a static array with a constant size of 10.
 	const int arrayLength = 10;
+	int arrayLengthValid = 0;
+	int input = 0;
 	int inputScores[arrayLength];
 
 	//	Prompt the user to enter up to 10 integer test scores, one at a time.
+	cout << "First Stop, Arrays!" << endl;
 	cout << "Please enter 10 integer test scores: " << endl;
 	for (int i = 0; i < arrayLength; i++) {
-		cin >> inputScores[i];
-	}
-	
-	//	Validate that each score is between 0 and 100, Store valid scores in the array.
-	int correctedScores[arrayLength];
-	int arrayLength2 = 0;
-	for (int i = 0; i < arrayLength; i++) {
-		if (inputScores[i] >= 0 && inputScores[i] <= 100) {
-			correctedScores[i] = inputScores[i];
-			arrayLength2 += 1;
+		cin >> input;
+		if (input >= 0 && input <= 100) {
+			inputScores[i] = input;
+			arrayLengthValid += 1;
 		}
 		else {
-			correctedScores[i] = 0;
+			inputScores[i] = -1;
 		}
 	}
 
@@ -70,28 +67,9 @@ void arraySolution() {
 	//		The average score.
 	//		The highest score.
 	//		The lowest score.
-	int averageScore = correctedScores[0];
-	int highestScore = correctedScores[0];
-	int lowestScore = correctedScores[0];
-	for (int i = 0; i < arrayLength; i++) {
-		averageScore += correctedScores[i];
-		if (correctedScores[i] > highestScore) {
-			highestScore = correctedScores[i];
-		}
-		if (correctedScores[i] < lowestScore) {
-			lowestScore = correctedScores[i];
-		}
-	}
-	averageScore /= arrayLength2;
-
-	cout << "The average score: " << averageScore << endl;
-	cout << "The highest score: " << highestScore << endl;
-	cout << "The lowest score: " << lowestScore << endl;
-
-	for (int i : correctedScores) {
-		cout << i << endl;
-	}
-
+	cout << "The average score: " << calculateAverage(inputScores, arrayLengthValid) << endl;
+	cout << "The highest score: " << findMax(inputScores, arrayLengthValid) << endl;
+	cout << "The lowest score: " << findMin(inputScores, arrayLengthValid) << endl;
 
 }
 
@@ -108,6 +86,7 @@ void vectorSolution(){
 	vector<int> inputScores;
 
 	//	Prompt the user to enter scores one at a time.
+	cout << "Second Stop, Vectors!" << endl;
 	cout << "Please enter your integer test scores (type -1 to stop): " << endl;
 	//	Continue accepting scores until the user enters - 1 to indicate they are done.
 	while (input >= 0) {
@@ -141,6 +120,7 @@ void vectorSolution(){
 
 	//Sort the scores in ascending order using std::sort(requires <algorithm>) and display the sorted list.
 	sort(inputScores.begin(), inputScores.end());
+	cout << "Sorted List: " << endl;
 	for (int i : inputScores) {
 		cout << i << endl;
 	}
@@ -152,8 +132,14 @@ void vectorSolution(){
 	//@param : temp
 	//@return: temp
  */
-float calculateAverage(const int arr[], int size) {
-	return 0.0;
+float calculateAverage(const int inputArr[], int arrSize) {
+	float averageScore = 0;
+	for (int i = 0; i < arrSize; i++) {
+		if (inputArr[i] != -1) {
+			averageScore += inputArr[i];
+		}
+	}
+	return 	averageScore /= arrSize;
 }
 /**
 	//@brief : temp
@@ -173,8 +159,14 @@ float calculateAverage(const vector<int>& inputVec) {
 	//@param : temp
 	//@return: temp
  */
-int findMax(const int arr[], int size) {
-	return 0;
+int findMax(const int inputArr[], int arrSize) {
+	int highestScore = 0;
+	for (int i = 0; i < arrSize; i++) {
+		if (inputArr[i] > highestScore && inputArr[i] != -1) {
+			highestScore = inputArr[i];
+		}
+	}
+	return highestScore;
 }
 /**
 	//@brief : temp
@@ -196,8 +188,14 @@ int findMax(const vector<int>& inputVec) {
 	//@param : temp
 	//@return: temp
  */
-int findMin(const int arr[], int size) {
-	return 0;
+int findMin(const int inputArr[], int arrSize) {
+	int lowestScore = 101;
+	for (int i = 0; i < arrSize; i++) {
+		if (inputArr[i] < lowestScore && inputArr[i] != -1) {
+			lowestScore = inputArr[i];
+		}
+	}
+	return lowestScore;
 }
 /**
 	//@brief : temp
