@@ -117,13 +117,20 @@ void vectorSolution(){
 			//	Use push_back() to store valid scores in the vector.
 			inputScores.push_back(input);
 		}
+		if (inputScores.size() == 0) {
+			cout << "You must enter at least 1 test score!" << endl;
+			input = 0;
+		}
 	}
 	
 	//	After input is complete, calculate and display:
 	//		The average score.
 	//		The highest score.
 	//		The lowest score.
-	
+	cout << "The average score: " << calculateAverage(inputScores) << endl;
+	cout << "The highest score: " << findMax(inputScores) << endl;
+	cout << "The lowest score: " << findMin(inputScores) << endl;
+
 	//Sort the scores in ascending order using std::sort(requires <algorithm>) and display the sorted list.
 	//inputScores = inputScores.sort();
 
@@ -135,15 +142,19 @@ void vectorSolution(){
 	//@return: temp
  */
 float calculateAverage(const int arr[], int size) {
-
+	return 0.0;
 }
 /**
 	//@brief : temp
 	//@param : temp
 	//@return: temp
  */
-float calculateAverage(const std::vector<int>& vec) {
-
+float calculateAverage(const vector<int>& inputVec) {
+	float result = 0;
+	for (int i : inputVec) {
+		result += i;
+	}
+	return result / inputVec.size();
 }
 
 /**
@@ -152,15 +163,16 @@ float calculateAverage(const std::vector<int>& vec) {
 	//@return: temp
  */
 int findMax(const int arr[], int size) {
-
+	return 0;
 }
 /**
 	//@brief : temp
 	//@param : temp
 	//@return: temp
  */
-int findMax(const std::vector<int>& vec) {
-
+int findMax(const vector<int>& inputVec) {
+	
+	return 0;
 }
 
 /**
@@ -169,13 +181,13 @@ int findMax(const std::vector<int>& vec) {
 	//@return: temp
  */
 int findMin(const int arr[], int size) {
-
+	return 0;
 }
 /**
 	//@brief : temp
 	//@param : temp
 	//@return: temp
  */
-int findMin(const std::vector<int>& vec) {
-
+int findMin(const vector<int>& inputVec) {
+	return 0;
 }
