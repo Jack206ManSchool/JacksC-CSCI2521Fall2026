@@ -5,11 +5,23 @@
  * @brief Compare static arrays and vectors for processing student scores.
  */
 #include<iostream>
+#include<vector>
+#include<algorithm>
 
 using namespace std;
 
 void arraySolution();
 void vectorSolution();
+
+// Array Helpers
+float calculateAverage(const int arr[], int size);
+int findMax(const int arr[], int size);
+int findMin(const int arr[], int size);
+// Vector Helpers
+float calculateAverage(const std::vector<int>&vec);
+int findMax(const std::vector<int>&vec);
+int findMin(const std::vector<int>&vec);
+
 
 /**
 	@brief: Entry point of the program.
@@ -18,7 +30,7 @@ void vectorSolution();
  */
 int main() {
 
-	arraySolution();
+	//arraySolution();
 	vectorSolution();
 	
 	return 0;
@@ -92,14 +104,20 @@ void arraySolution() {
 void vectorSolution(){
 
 	//	Declare an empty vector<int>.
-	
+	int input = 0;
+	vector<int> inputScores;
+
 	//	Prompt the user to enter scores one at a time.
-	
+	cout << "Please enter your integer test scores (type -1 to stop): " << endl;
 	//	Continue accepting scores until the user enters - 1 to indicate they are done.
-	
-	//	Validate that any value other than - 1 is between 0 and 100.
-	
-	//	Use push_back() to store valid scores in the vector.
+	while (input >= 0) {
+		cin >> input;
+		//	Validate that any value other than - 1 is between 0 and 100.
+		if (input >= 0 && input <= 100) {
+			//	Use push_back() to store valid scores in the vector.
+			inputScores.push_back(input);
+		}
+	}
 	
 	//	After input is complete, calculate and display:
 	//		The average score.
@@ -107,17 +125,57 @@ void vectorSolution(){
 	//		The lowest score.
 	
 	//Sort the scores in ascending order using std::sort(requires <algorithm>) and display the sorted list.
+	//inputScores = inputScores.sort();
 
 }
 
-//	Extra Credit(10 Points) - Added in Grade book as separate line item
-//	To earn extra credit, you must create separate helper functions for the statistical calculations rather than doing them inline.If you implement these, they must also be documented with Doxygen.
-//	Recommended Prototypes :
-//	Array Helper Functions :
-//	float calculateAverage(const int arr[], int size);
-//	int findMax(const int arr[], int size);
-//	int findMin(const int arr[], int size);
-//	Vector Helper Functions :
-//	float calculateAverage(const std::vector<int>&vec);
-//	int findMax(const std::vector<int>&vec);
-//	int findMin(const std::vector<int>&vec);
+/**
+	//@brief : temp
+	//@param : temp
+	//@return: temp
+ */
+float calculateAverage(const int arr[], int size) {
+
+}
+/**
+	//@brief : temp
+	//@param : temp
+	//@return: temp
+ */
+float calculateAverage(const std::vector<int>& vec) {
+
+}
+
+/**
+	//@brief : temp
+	//@param : temp
+	//@return: temp
+ */
+int findMax(const int arr[], int size) {
+
+}
+/**
+	//@brief : temp
+	//@param : temp
+	//@return: temp
+ */
+int findMax(const std::vector<int>& vec) {
+
+}
+
+/**
+	//@brief : temp
+	//@param : temp
+	//@return: temp
+ */
+int findMin(const int arr[], int size) {
+
+}
+/**
+	//@brief : temp
+	//@param : temp
+	//@return: temp
+ */
+int findMin(const std::vector<int>& vec) {
+
+}
