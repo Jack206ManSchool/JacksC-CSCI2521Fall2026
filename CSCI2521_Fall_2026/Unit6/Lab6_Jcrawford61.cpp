@@ -37,7 +37,7 @@ int main() {
 }
 
 /**
-	@brief : Explain that this function calculates statistics using a fixed - size static array.
+	@brief : This function calculates test score statistics using a fixed-size static array.
 	@param : None.
 	@return: None(void).
  */
@@ -51,7 +51,7 @@ void arraySolution() {
 
 	//	Prompt the user to enter up to 10 integer test scores, one at a time.
 	cout << "First Stop, Arrays!" << endl;
-	cout << "Please enter 10 integer test scores: " << endl;
+	cout << "Please enter 10 integer test scores (0-100): " << endl;
 	for (int i = 0; i < arrayLength; i++) {
 		cin >> input;
 		if (input >= 0 && input <= 100) {
@@ -63,22 +63,21 @@ void arraySolution() {
 		}
 	}
 
+	cout << endl;
+
 	//	After 10 scores are entered, calculate and display:
-	//		The average score.
-	//		The highest score.
-	//		The lowest score.
+	//	The average score, The highest score, The lowest score.
 	cout << "The average score: " << calculateAverage(inputScores, arrayLengthValid) << endl;
 	cout << "The highest score: " << findMax(inputScores, arrayLengthValid) << endl;
 	cout << "The lowest score: " << findMin(inputScores, arrayLengthValid) << endl;
 
 }
 
-
-/**
-	//@brief : Explain that this function calculates statistics using a dynamic vector.
-	//@param : None.
-	//@return: None(void).
- */
+ /**
+	 @brief : This function calculates test score statistics using a dynamic vector.
+	 @param : None.
+	 @return: None(void).
+  */
 void vectorSolution(){
 
 	//	Declare an empty vector<int>.
@@ -87,7 +86,7 @@ void vectorSolution(){
 
 	//	Prompt the user to enter scores one at a time.
 	cout << "Second Stop, Vectors!" << endl;
-	cout << "Please enter your integer test scores (type -1 to stop): " << endl;
+	cout << "Please enter your integer test scores (0-100) (type -1 to stop): " << endl;
 	//	Continue accepting scores until the user enters - 1 to indicate they are done.
 	while (input >= 0) {
 		cin >> input;
@@ -100,8 +99,10 @@ void vectorSolution(){
 
 			if (input != -1) {
 				cout << "That is not a valid test score!" << endl;
+				input = 0;
 			}
-			else if (inputScores.size() == 0) {
+
+			if (inputScores.size() == 0) {
 				cout << "You must enter at least 1 valid test score!" << endl;
 				input = 0;
 			}
@@ -110,10 +111,10 @@ void vectorSolution(){
 
 	}
 	
-	//	After input is complete, calculate and display:
-	//		The average score.
-	//		The highest score.
-	//		The lowest score.
+	cout << endl << endl;
+
+	//	After input is complete, calculate and display: 
+	//  The average score, The highest score, The lowest score.
 	cout << "The average score: " << calculateAverage(inputScores) << endl;
 	cout << "The highest score: " << findMax(inputScores) << endl;
 	cout << "The lowest score: " << findMin(inputScores) << endl;
@@ -128,9 +129,9 @@ void vectorSolution(){
 }
 
 /**
-	//@brief : temp
-	//@param : temp
-	//@return: temp
+	//@brief : Calculates the average of the provided integer array
+	//@param : inputArr - The array to calculate the average of. arrSize - The size of the array.
+	//@return: The calculated average of inputArr
  */
 float calculateAverage(const int inputArr[], int arrSize) {
 	float averageScore = 0;
@@ -142,9 +143,9 @@ float calculateAverage(const int inputArr[], int arrSize) {
 	return 	averageScore /= arrSize;
 }
 /**
-	//@brief : temp
-	//@param : temp
-	//@return: temp
+	//@brief : Calculates the average of the provided integer vector
+	//@param : inputVec - The vector to calculate the average of
+	//@return: The calculated average of inputVec
  */
 float calculateAverage(const vector<int>& inputVec) {
 	float result = 0;
@@ -155,9 +156,9 @@ float calculateAverage(const vector<int>& inputVec) {
 }
 
 /**
-	//@brief : temp
-	//@param : temp
-	//@return: temp
+	//@brief : Find the max of the provided integer array
+	//@param : inputArr - The array to find the max element of. arrSize - The size of the array.
+	//@return: The max value in inputArr
  */
 int findMax(const int inputArr[], int arrSize) {
 	int highestScore = 0;
@@ -169,9 +170,9 @@ int findMax(const int inputArr[], int arrSize) {
 	return highestScore;
 }
 /**
-	//@brief : temp
-	//@param : temp
-	//@return: temp
+	//@brief : Find the max of the provided integer vector
+	//@param : inputVec - The vector to find the max element of.
+	//@return: The max value in inputVec
  */
 int findMax(const vector<int>& inputVec) {
 	int result = inputVec.at(0);
@@ -184,9 +185,9 @@ int findMax(const vector<int>& inputVec) {
 }
 
 /**
-	//@brief : temp
-	//@param : temp
-	//@return: temp
+	//@brief : Find the min of the provided integer array
+	//@param : inputArr - The array to find the min element of. arrSize - The size of the array.
+	//@return: The min value in inputArr
  */
 int findMin(const int inputArr[], int arrSize) {
 	int lowestScore = 101;
@@ -198,9 +199,9 @@ int findMin(const int inputArr[], int arrSize) {
 	return lowestScore;
 }
 /**
-	//@brief : temp
-	//@param : temp
-	//@return: temp
+	//@brief : Find the min of the provided integer vector
+	//@param : inputVec - The vector to find the min element of.
+	//@return: The min value in inputVec
  */
 int findMin(const vector<int>& inputVec) {
 	int result = inputVec.at(0);
