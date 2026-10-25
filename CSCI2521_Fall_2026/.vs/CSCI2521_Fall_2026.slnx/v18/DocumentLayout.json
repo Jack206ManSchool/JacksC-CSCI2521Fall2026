@@ -3,12 +3,24 @@
   "WorkspaceRootPath": "D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{45D863F1-CDE7-47FB-804A-FEE196B75ECF}|Unit6\\Unit6.vcxproj|D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit6\\Lab6_Jcrawford61.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{45D863F1-CDE7-47FB-804A-FEE196B75ECF}|Unit6\\Unit6.vcxproj|solutionrelative:Unit6\\Lab6_Jcrawford61.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{23036EA3-A3C6-4E65-83DC-72641D0FB66C}|Unit7\\Unit7.vcxproj|D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit7\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{23036EA3-A3C6-4E65-83DC-72641D0FB66C}|Unit7\\Unit7.vcxproj|solutionrelative:Unit7\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AC0EC1A-8B12-4C64-A08B-CAA3BA3B6DF7}|Unit5\\Unit5.vcxproj|D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit5\\Lab5_Jcrawford61.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{6AC0EC1A-8B12-4C64-A08B-CAA3BA3B6DF7}|Unit5\\Unit5.vcxproj|solutionrelative:Unit5\\Lab5_Jcrawford61.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{23036EA3-A3C6-4E65-83DC-72641D0FB66C}|Unit7\\Unit7.vcxproj|D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit7\\Account.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{23036EA3-A3C6-4E65-83DC-72641D0FB66C}|Unit7\\Unit7.vcxproj|solutionrelative:Unit7\\Account.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23036EA3-A3C6-4E65-83DC-72641D0FB66C}|Unit7\\Unit7.vcxproj|D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit7\\Customer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{23036EA3-A3C6-4E65-83DC-72641D0FB66C}|Unit7\\Unit7.vcxproj|solutionrelative:Unit7\\Customer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23036EA3-A3C6-4E65-83DC-72641D0FB66C}|Unit7\\Unit7.vcxproj|D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit7\\Customer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{23036EA3-A3C6-4E65-83DC-72641D0FB66C}|Unit7\\Unit7.vcxproj|solutionrelative:Unit7\\Customer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{23036EA3-A3C6-4E65-83DC-72641D0FB66C}|Unit7\\Unit7.vcxproj|D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit7\\Account.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{23036EA3-A3C6-4E65-83DC-72641D0FB66C}|Unit7\\Unit7.vcxproj|solutionrelative:Unit7\\Account.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -37,28 +49,65 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Lab6_Jcrawford61.cpp",
-              "DocumentMoniker": "D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit6\\Lab6_Jcrawford61.cpp",
-              "RelativeDocumentMoniker": "Unit6\\Lab6_Jcrawford61.cpp",
-              "ToolTip": "D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit6\\Lab6_Jcrawford61.cpp",
-              "RelativeToolTip": "Unit6\\Lab6_Jcrawford61.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAaAAAAAAAAAA==",
+              "Title": "Source.cpp",
+              "DocumentMoniker": "D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit7\\Source.cpp",
+              "RelativeDocumentMoniker": "Unit7\\Source.cpp",
+              "ToolTip": "D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit7\\Source.cpp",
+              "RelativeToolTip": "Unit7\\Source.cpp",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADAAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-10-12T22:50:07.69Z",
+              "WhenOpened": "2026-10-23T01:08:00.92Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Lab5_Jcrawford61.cpp",
-              "DocumentMoniker": "D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit5\\Lab5_Jcrawford61.cpp",
-              "RelativeDocumentMoniker": "Unit5\\Lab5_Jcrawford61.cpp",
-              "ToolTip": "D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit5\\Lab5_Jcrawford61.cpp",
-              "RelativeToolTip": "Unit5\\Lab5_Jcrawford61.cpp",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAAIAAAALAAAAAAAAAA==",
+              "Title": "Account.cpp",
+              "DocumentMoniker": "D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit7\\Account.cpp",
+              "RelativeDocumentMoniker": "Unit7\\Account.cpp",
+              "ToolTip": "D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit7\\Account.cpp",
+              "RelativeToolTip": "Unit7\\Account.cpp",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2026-10-02T23:05:35.36Z",
+              "WhenOpened": "2026-10-23T01:07:53.079Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Customer.cpp",
+              "DocumentMoniker": "D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit7\\Customer.cpp",
+              "RelativeDocumentMoniker": "Unit7\\Customer.cpp",
+              "ToolTip": "D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit7\\Customer.cpp",
+              "RelativeToolTip": "Unit7\\Customer.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2026-10-23T01:07:49.406Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Account.h",
+              "DocumentMoniker": "D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit7\\Account.h",
+              "RelativeDocumentMoniker": "Unit7\\Account.h",
+              "ToolTip": "D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit7\\Account.h",
+              "RelativeToolTip": "Unit7\\Account.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-10-24T20:52:41.858Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Customer.h",
+              "DocumentMoniker": "D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit7\\Customer.h",
+              "RelativeDocumentMoniker": "Unit7\\Customer.h",
+              "ToolTip": "D:\\School\\College\\09 Fall 2026\\C\u002B\u002B2521\\Projects\\JacksC\u002B\u002BCSCI2521Fall2026\\CSCI2521_Fall_2026\\Unit7\\Customer.h",
+              "RelativeToolTip": "Unit7\\Customer.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-10-24T20:52:46.556Z"
             }
           ]
         }
