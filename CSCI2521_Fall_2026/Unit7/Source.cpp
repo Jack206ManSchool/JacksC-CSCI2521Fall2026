@@ -30,8 +30,6 @@ int main()
     Customer customer("0123456789", "customer@cscc.edu");
     Account account("5423678409", 100.00, customer);
     account.printAccountInfo();
-
-
         
     int menuChoice = getMenuOption();
     while (menuChoice != QUIT)
@@ -39,6 +37,7 @@ int main()
         switch (menuChoice)
         {
         case DEPOSIT:
+
             // Prompt the user to enter a deposit amount.
             cout << "Please enter your deposit amount: ";
             cin >> menuChoice;
@@ -54,26 +53,26 @@ int main()
 
             break;
         case WITHDRAWAL:
-            /*
-            TODO: Gather the withdrawal amount input and validate it is > 0.
-            Add the code that interacts with the account object to add
-            a widthdrawal to the account.
-            
-            Case WITHDRAWAL :
-                Prompt the user to enter a withdrawal amount.
-                Validate the input(must be $ > 0$).
-                If valid, call the account object's .withdraw() function.
-            */
+
+            //Prompt the user to enter a withdrawal amount.
+            cout << "Please enter your withdrawal amount: ";
+            cin >> menuChoice;
+            // Validate the input (must be $ > 0$).
+            if (isAmountValid(menuChoice)) {
+                // If valid, call the account object's .withdraw() function.
+                account.withdraw(menuChoice);
+                cout << "Successfully withdrew $" << menuChoice << '!';
+            }
+            else {
+                cout << "ERROR! That is not a valid amount!";
+            }
+
             break;
         case CLOSE_OF_BUSINESS:
-            /*
-            TODO: Add the code that interacts with the account object to perform
-            the close of business account balancing.
-            Case CLOSE_OF_BUSINESS :
-                Call the account object's .closeOfBusiness() function.
-                Note : The Account class uses the accumulate function(from the <numeric> library) 
-                to sum up transactions and update the balance when this is called.
-            */
+
+            //Call the account object's .closeOfBusiness() function.
+            account.closeOfBusiness();
+
             break;
         }
 
