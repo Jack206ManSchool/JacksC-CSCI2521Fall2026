@@ -51,5 +51,6 @@ int main(){
 
 	//Cleanup : Ensure any memory dynamically allocated(the heap variable) is properly deleted to prevent memory leaks
 	delete heapInt;
+	delete ptrToStack;
 
 }
