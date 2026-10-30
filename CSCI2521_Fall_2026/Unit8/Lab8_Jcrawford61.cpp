@@ -31,27 +31,25 @@ int main(){
 	
 	//	Print the value of stackInt and its memory address.
 	cout << "Stack Variable(stackInt) :" << endl;
-	cout << '/t' << "Value: " << stackInt;
-	cout << '/t' << "Address : " << &stackInt;
+	cout << "\t" << "Value: " << stackInt << endl;
+	cout << "\t" << "Address : " << &stackInt << endl;
 
 	//	Print the value stored at heapInt and the memory address where it is stored.
 	cout << "Heap Variable(heapInt) :" << endl;
-	cout << '/t' << "Value : " << *heapInt << endl;
-	cout << '/t' << "Address : " << heapInt << endl;
+	cout << "\t" << "Value : " << *heapInt << endl;
+	cout << "\t" << "Address : " << heapInt << endl;
 
 	//	Print the value pointed to by ptrToStack and the address stored in the pointer itself.
 	cout << "Pointer to Stack(ptrToStack) :" << endl;
-	cout << '/t' << "Value Pointed To : " << ptrToStack << endl;
-	cout << '/t' << "Address Stored : " << &ptrToStack << endl;
+	cout << "\t" << "Value Pointed To : " << *ptrToStack << endl;
+	cout << "\t" << "Address Stored : " << ptrToStack << endl;
 
 	//	Print the value referred to by refToStack and its memory address.
 	cout << "Reference to Stack(refToStack) :" << endl;
-	cout << '/t' << "Value Referred To : " << refToStack << endl;
-	cout << '/t' << "Address : " << &refToStack << endl;
+	cout << "\t" << "Value Referred To : " << refToStack << endl;
+	cout << "\t" << "Address : " << &refToStack << endl;
 
 	//Cleanup : Ensure any memory dynamically allocated(the heap variable) is properly deleted to prevent memory leaks
-	
-
-	
+	delete heapInt;
 
 }
