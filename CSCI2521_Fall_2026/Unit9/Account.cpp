@@ -6,7 +6,7 @@ using namespace std;
 
 SavingsAccount::SavingsAccount(const string& accNum, double initialBalance, const Customer& customer) : Account(accNum, initialBalance, customer)
 {
-    dailyInterest = 0.05;
+    dailyInterest = (2 % 100)/100.0;
 }
 
 void SavingsAccount::closeOfBusiness()
@@ -32,7 +32,7 @@ void SavingsAccount::printAccountInfo() const
 {
     cout << "Account Number: " << accountNumber << endl;
     cout << "Current Balance: $" << balance << endl;
-    cout << "Interest Rate: %" << dailyInterest << endl;
+    cout << "Interest Rate: " << dailyInterest * 100.0 << "%" << endl;
     owner.printCustomerInfo();
 }
 
