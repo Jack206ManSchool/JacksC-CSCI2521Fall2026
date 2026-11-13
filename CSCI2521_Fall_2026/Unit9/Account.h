@@ -7,7 +7,7 @@
 using namespace std;
 
 class Account {
-private:
+protected:
     string accountNumber;
     double balance;
     Customer owner;
@@ -32,6 +32,13 @@ public:
 
     void printAccountInfo() const;
     void printTransactions() const;
+};
+
+class SavingsAccount : Account {
+private:
+    double dailyInterest;
+public:
+    SavingsAccount();
 };
 
 #endif
