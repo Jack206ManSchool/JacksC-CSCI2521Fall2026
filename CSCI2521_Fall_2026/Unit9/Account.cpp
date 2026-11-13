@@ -4,10 +4,9 @@
 using namespace std;
 
 
-SavingsAccount::SavingsAccount()
+SavingsAccount::SavingsAccount(const string& accNum, double initialBalance, const Customer& customer) : Account(accNum, initialBalance, customer)
 {
     dailyInterest = 0.05;
-    Account();
 }
 
 void SavingsAccount::closeOfBusiness()
@@ -102,7 +101,7 @@ bool Account::withdraw(double amount)
 /// This function will iterate deposits and withdrawals and update the balance
 /// available in the account.
 /// </summary>
-void virtual Account::closeOfBusiness()
+void Account::closeOfBusiness()
 {
     double totalDeposits = accumulate(deposits.begin(), deposits.end(), 0.0);
     double totalWithdrawals = accumulate(withdrawals.begin(), withdrawals.end(), 0.0);
@@ -166,7 +165,7 @@ Customer Account::getCustomer() const
 /// <summary>
 /// Prints a quick informational summary about the Account
 /// </summary>
-void virtual Account::printAccountInfo() const
+void Account::printAccountInfo() const
 {
     cout << "Account Number: " << accountNumber << endl;
     cout << "Current Balance: $" << balance << endl;

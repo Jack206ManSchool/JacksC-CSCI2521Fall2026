@@ -24,21 +24,23 @@ public:
     bool deposit(double amount);
     bool withdraw(double amount);
 
-    void closeOfBusiness();
+    virtual void closeOfBusiness();
 
     double getBalance() const;
     string getAccountNumber() const;
     Customer getCustomer() const;
 
-    void printAccountInfo() const;
+    virtual void printAccountInfo() const;
     void printTransactions() const;
 };
 
-class SavingsAccount : Account {
+class SavingsAccount : public Account {
 private:
     double dailyInterest;
 public:
-    SavingsAccount();
+    SavingsAccount(const string& accNum, double initialBalance, const Customer& customer);
+    void closeOfBusiness();
+    void printAccountInfo() const;
 };
 
 #endif

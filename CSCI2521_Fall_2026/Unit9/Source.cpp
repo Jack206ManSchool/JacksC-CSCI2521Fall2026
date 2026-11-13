@@ -20,8 +20,9 @@ int main()
     // just use dummy data for now for the customer and the account
     // we care about interacting with account object for this lab
     Customer customer("0123456789", "customer@cscc.edu");
-    Account account("5423678409", 100.00, customer);
-    account.printAccountInfo();
+    Account* account = new SavingsAccount("5423678409", 100.00, customer);
+
+    (*account).printAccountInfo();
 
     int menuChoice = getMenuOption();
     while (menuChoice != QUIT)
@@ -32,14 +33,14 @@ int main()
         {
         case DEPOSIT:
             deposit = getDepositAmount();
-            account.deposit(deposit);
+            (*account).deposit(deposit);
             break;
         case WITHDRAWAL:
             withdrawal = getWithdrawalAmount();
-            account.withdraw(withdrawal);
+            (*account).withdraw(withdrawal);
             break;
         case CLOSE_OF_BUSINESS:
-            account.closeOfBusiness();
+            (*account).closeOfBusiness();
             break;
         }
 
