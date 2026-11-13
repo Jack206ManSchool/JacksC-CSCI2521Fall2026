@@ -22,6 +22,10 @@ const int WITHDRAWAL = 2;
 const int CLOSE_OF_BUSINESS = 3;
 const int QUIT = 4;
 
+/**
+ * @brief Entry point for banking program
+ * @return 0 to indicate success.
+ */
 int main()
 {
     // just use dummy data for now for the customer and the account
