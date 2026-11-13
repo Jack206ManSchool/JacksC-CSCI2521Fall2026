@@ -21,7 +21,7 @@
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="Customer.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Lab9_Jcrawford61.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />

@@ -1,14 +1,29 @@
+/**
+ * @file Account.cpp
+ * @author Jack Crawford
+ * @date 2026-11-12
+ * @brief Code for the Account and SavingsAccount Classes
+ */
+
 #include "Account.h"
 #include <iostream>
 #include <numeric> // for accumulate
 using namespace std;
 
-
+/**
+ * @brief Savings account constructor
+ * @return None (void)
+ */
 SavingsAccount::SavingsAccount(const string& accNum, double initialBalance, const Customer& customer) : Account(accNum, initialBalance, customer)
 {
     dailyInterest = (2 % 100)/100.0;
 }
 
+/**
+ * @brief This function will iterate deposits, withdrawals and apply 
+    interest to update the balance available in the account.
+ * @return None (void)
+ */
 void SavingsAccount::closeOfBusiness()
 {
     double totalDeposits = accumulate(deposits.begin(), deposits.end(), 0.0);
@@ -28,6 +43,10 @@ void SavingsAccount::closeOfBusiness()
     withdrawals.clear();
 }
 
+/**
+ * @brief Prints SavingsAccount Info (Now with interest rates!)
+ * @return None (void)
+ */
 void SavingsAccount::printAccountInfo() const
 {
     cout << "Account Number: " << accountNumber << endl;

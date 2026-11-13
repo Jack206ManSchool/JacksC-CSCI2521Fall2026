@@ -1,3 +1,10 @@
+/**
+ * @file Customer.cpp
+ * @author Jack Crawford
+ * @date 2026-11-12
+ * @brief Customer Class Code (Unedited)
+ */
+
 #include "Customer.h"
 #include <iostream>
 using namespace std;

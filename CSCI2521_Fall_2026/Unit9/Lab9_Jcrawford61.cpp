@@ -1,3 +1,10 @@
+/**
+ * @file Lab9_Jcrawford61.cpp
+ * @author Jack Crawford
+ * @date 2026-11-12
+ * @brief A banking simulation interacting demonstrating inheritance
+ */
+
 #include<iostream>
 #include "Account.h"
 
@@ -46,6 +53,8 @@ int main()
 
         menuChoice = getMenuOption();
     }
+
+    delete account;
 }
 
 void printMenu()
