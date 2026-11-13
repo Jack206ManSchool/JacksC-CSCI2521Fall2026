@@ -3,6 +3,40 @@
 #include <numeric> // for accumulate
 using namespace std;
 
+
+SavingsAccount::SavingsAccount()
+{
+    dailyInterest = 0.05;
+    Account();
+}
+
+void SavingsAccount::closeOfBusiness()
+{
+    double totalDeposits = accumulate(deposits.begin(), deposits.end(), 0.0);
+    double totalWithdrawals = accumulate(withdrawals.begin(), withdrawals.end(), 0.0);
+
+    double previousBalance = balance;
+    double newBalance = previousBalance + totalDeposits - totalWithdrawals;
+
+    balance = newBalance;
+    if (balance > 0) {
+        balance = balance + (balance * dailyInterest);
+    }
+
+    printSummary(previousBalance, totalDeposits, totalWithdrawals, balance);
+
+    deposits.clear();
+    withdrawals.clear();
+}
+
+void SavingsAccount::printAccountInfo() const
+{
+    cout << "Account Number: " << accountNumber << endl;
+    cout << "Current Balance: $" << balance << endl;
+    cout << "Interest Rate: %" << dailyInterest << endl;
+    owner.printCustomerInfo();
+}
+
 /// <summary>
 /// Default constructor
 /// </summary>
@@ -68,7 +102,7 @@ bool Account::withdraw(double amount)
 /// This function will iterate deposits and withdrawals and update the balance
 /// available in the account.
 /// </summary>
-void Account::closeOfBusiness() 
+void virtual Account::closeOfBusiness()
 {
     double totalDeposits = accumulate(deposits.begin(), deposits.end(), 0.0);
     double totalWithdrawals = accumulate(withdrawals.begin(), withdrawals.end(), 0.0);
@@ -92,7 +126,7 @@ void Account::closeOfBusiness()
 /// <param name="totalDeposits">The total dollar amount of deposits added to the account.</param>
 /// <param name="totalWithdrawals">The total dollar amount of withdrawals added to the account.</param>
 /// <param name="newBalance">The balance after close of day balancing.</param>
-void Account::printSummary(double previousBalance, double totalDeposits, double totalWithdrawals, double newBalance) const 
+void Account::printSummary(double previousBalance, double totalDeposits, double totalWithdrawals, double newBalance) const
 {
     cout << "Account Number: " << accountNumber << endl;
     cout << "Previous Balance: $" << previousBalance << endl;
@@ -132,7 +166,7 @@ Customer Account::getCustomer() const
 /// <summary>
 /// Prints a quick informational summary about the Account
 /// </summary>
-void Account::printAccountInfo() const 
+void virtual Account::printAccountInfo() const
 {
     cout << "Account Number: " << accountNumber << endl;
     cout << "Current Balance: $" << balance << endl;
