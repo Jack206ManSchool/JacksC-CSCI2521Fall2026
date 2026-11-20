@@ -1,12 +1,17 @@
-#pragma once
+#ifndef MORSECONVERTER_H
+#define MORSECONVERTER_H
+
 #include <iostream>
 #include <string>
 
 using namespace std;
 
 class MorseConverter {
-public:
-	string convertToMorse(string in);
-private:
-	string numString(char letter);
+	public:
+		MorseConverter();
+		string convertToMorse(string in);
+	private:
+		string numString(char letter);
 };
+
+#endif

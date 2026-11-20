@@ -11,7 +11,7 @@ int main() {
 	// Numbers: 48-57 Letters (Upper): 65-90 Letters (lower): 97-122
 	getline(cin, input);
 
-	//cout << convertToMorse(input) << endl;
+	cout << MorseConverter.convertToMorse(input) << endl;
 
 	return 0;
 }
