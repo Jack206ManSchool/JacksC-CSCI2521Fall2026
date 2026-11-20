@@ -1,8 +1,10 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 string numString(char letter) {
+
 	if (letter >= 97) {
 		letter -= 32;
 	}
@@ -43,18 +45,28 @@ string numString(char letter) {
 	else if (letter == 88) { return "-..-"; }
 	else if (letter == 89) { return "-.--"; }
 	else if (letter == 90) { return "--.."; }
-	else { return " / "; }
+	else { return "/ "; }
 
+}
+
+string convertToMorse(string in){
+	string morse = "";
+
+	for (int i = 0; i <= in.length()-1; i++) {
+		morse += (numString(in.at(i)) + " ");
+	}
+
+	return morse;
 }
 
 int main() {
 
-	string input;
+	string input = "";
 
 	// Numbers: 48-57 Letters (Upper): 65-90 Letters (lower): 97-122
-	cin >> input;
+	getline(cin, input);
 
-
+	cout << convertToMorse(input) << endl;
 
 	return 0;
 }
