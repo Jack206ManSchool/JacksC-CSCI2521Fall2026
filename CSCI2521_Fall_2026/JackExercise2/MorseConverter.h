@@ -1,16 +1,14 @@
-#ifndef MORSECONVERTER_H
-#define MORSECONVERTER_H
-
 #include <string>
+#include "MorseType.h"
 
 using namespace std;
 
 class MorseConverter {
 	public:
 		MorseConverter();
-		string convertToMorse(string in);
+		string convertToLetters(MorseType in);
+		MorseType convertToMorse(string in);
 	private:
 		string numString(char letter);
+		char stringNum(string letter);
 };
-
-#endif

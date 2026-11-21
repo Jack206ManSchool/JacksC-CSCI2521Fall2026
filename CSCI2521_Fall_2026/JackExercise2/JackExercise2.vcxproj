@@ -139,11 +139,13 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\Lab1_Jcrawford61\MorseConverter.cpp" />
     <ClCompile Include="Exercise2_Jcrawford61.cpp" />
+    <ClCompile Include="MorseConverter.cpp" />
+    <ClCompile Include="MorseType.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Lab1_Jcrawford61\MorseConverter.h" />
+    <ClInclude Include="MorseConverter.h" />
+    <ClInclude Include="MorseType.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
