@@ -8,7 +8,10 @@ class MorseType {
 		void SetMIndex(int index, string value);
 		string GetMIndex(int index);
 		int GetMSize();
+		string OutputAsString();
+		void MorseToMorse(MorseType morse2);
 	private:
 		int size;
 		string letters[0];
+		string OutputLettersRaw();
 };

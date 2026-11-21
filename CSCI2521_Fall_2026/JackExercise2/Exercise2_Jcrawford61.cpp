@@ -14,8 +14,9 @@ int main() {
 	getline(cin, input);
 
 	MorseType morseInput = MorseType(input.size());
+	morseInput.MorseToMorse(mc.convertToMorse(input));
 
-	cout << mc.convertToMorse(input) << endl;
+	cout << morseInput.OutputAsString() << endl;
 
 	return 0;
 }

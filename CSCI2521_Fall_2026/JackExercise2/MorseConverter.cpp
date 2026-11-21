@@ -90,21 +90,21 @@ char MorseConverter::stringNum(string letter) {
 
 }
 
-string MorseConverter::convertToLetters(MorseType in) {
+string MorseConverter::convertToLetters(MorseType* in) {
 	string translated = "";
 
-	for (int i = 0; i <= in.GetMSize() - 1; i++) {
-		translated += (stringNum(in.GetMIndex(i)));
+	for (int i = 0; i <= (*in).GetMSize() - 1; i++) {
+		translated += (stringNum((*in).GetMIndex(i)));
 	}
 
 	return translated;
 }
 
 MorseType MorseConverter::convertToMorse(string in) {
-	string morse = "";
+	MorseType morse = MorseType(in.length());
 
 	for (int i = 0; i <= in.length() - 1; i++) {
-		morse += (numString(in.at(i)) + " ");
+		morse.SetMIndex(i, (numString(in.at(i))));
 	}
 
 	return morse;
