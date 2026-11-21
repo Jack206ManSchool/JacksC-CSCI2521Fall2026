@@ -1,7 +1,6 @@
 #ifndef MORSECONVERTER_H
 #define MORSECONVERTER_H
 
-#include <iostream>
 #include <string>
 
 using namespace std;
