@@ -1,37 +1,35 @@
 #include "MorseType.h"
 
-MorseType::MorseType(int s) {
-	size = s;
-	this->letters = new string[s];
+MorseType::MorseType(int s = 0) {
+	letters = new vector<string>(s);
 }
 
 void MorseType::SetMIndex(int index, string value){
-	letters[index] = value;
+	letters->at(index) = value;
 }
 
 string MorseType::GetMIndex(int index) {
-	return letters[index];
+	return letters->at(index);
 }
 
 int MorseType::GetMSize() {
-	return size;
+	return letters->size();
 }
 
 string MorseType::OutputAsString() {
 	string morse = "";
 
-	for (int i = 0; i <= size - 1; i++) {
-		morse += GetMIndex(i);
+	for (int i = 0; i <= (*letters).size(); i++) {
+		morse += (GetMIndex(i) + " ");
 	}
 
 	return morse;
 }
 
-string* MorseType::OutputLettersRaw() {
+vector<string>* MorseType::OutputLettersRaw() {
 	return letters;
 }
 
 void MorseType::MorseToMorse(MorseType morse2) {
 	letters = morse2.OutputLettersRaw();
-	size = (*letters).size();
 }

@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <vector>
+#include <iostream>
 
 using namespace std;
 
@@ -12,7 +14,6 @@ class MorseType {
 		string OutputAsString();
 		void MorseToMorse(MorseType morse2);
 	private:
-		int size;
-		string* letters;
-		string* OutputLettersRaw();
+		vector<string>* letters;
+		vector<string>* OutputLettersRaw();
 };

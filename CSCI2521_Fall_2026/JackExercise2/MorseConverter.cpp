@@ -86,7 +86,7 @@ char MorseConverter::stringNum(string letter) {
 	else if (letter == "-..-") { return 88; }
 	else if (letter == "-.--") { return 89; }
 	else if (letter == "--..") { return 90; }
-	else { return ' '; }
+	else { return 137; }
 
 }
 
