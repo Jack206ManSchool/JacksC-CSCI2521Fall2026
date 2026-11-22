@@ -26,10 +26,13 @@ int main() {
 			cout << morseInput.OutputAsString() << endl;
 		}
 		else if (selection == "2") {
-		
+			getline(cin, input);
+			MorseType morseInput = MorseType(input);
+			cout << "Test!" << endl;
+			cout << mc.convertToLetters(morseInput) << endl;
 		}
 		else if (selection == "3") {
-		
+			cout << "Thanks for using my translator! :)" << endl;
 		}
 		else {
 			cout << "Invalid Selection! Please try again." << endl;

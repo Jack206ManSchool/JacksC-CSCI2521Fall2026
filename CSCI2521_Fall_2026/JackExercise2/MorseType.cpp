@@ -4,6 +4,20 @@ MorseType::MorseType(int s = 0) {
 	letters = new vector<string>(s);
 }
 
+MorseType::MorseType(string input) {
+	letters = new vector<string>(0);
+	int i = 0;
+	input = " " + input + " ";
+
+	while (input.find(' ', i) != string::npos) {
+		letters->push_back(input.substr(i, input.find(' ', i)));
+		cout << letters->at(i) << endl;
+		i = (input.find(' ', i));
+		cout << i << endl;
+	}
+
+}
+
 //MorseType::~MorseType() {
 //	delete letters;
 //}

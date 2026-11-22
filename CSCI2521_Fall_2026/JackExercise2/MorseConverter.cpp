@@ -90,11 +90,11 @@ char MorseConverter::stringNum(string letter) {
 
 }
 
-string MorseConverter::convertToLetters(MorseType* in) {
+string MorseConverter::convertToLetters(MorseType in) {
 	string translated = "";
 
-	for (int i = 0; i <= (*in).GetMSize() - 1; i++) {
-		translated += (stringNum((*in).GetMIndex(i)));
+	for (int i = 0; i <= in.GetMSize() - 1; i++) {
+		translated += (stringNum(in.GetMIndex(i)));
 	}
 
 	return translated;

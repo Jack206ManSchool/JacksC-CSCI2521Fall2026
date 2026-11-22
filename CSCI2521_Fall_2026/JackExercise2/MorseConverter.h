@@ -7,7 +7,7 @@ using namespace std;
 class MorseConverter {
 	public:
 		MorseConverter();
-		string convertToLetters(MorseType* in);
+		string convertToLetters(MorseType in);
 		MorseType convertToMorse(string in);
 	private:
 		string numString(char letter);
