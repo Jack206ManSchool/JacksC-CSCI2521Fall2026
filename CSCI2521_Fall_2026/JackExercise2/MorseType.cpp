@@ -4,6 +4,10 @@ MorseType::MorseType(int s = 0) {
 	letters = new vector<string>(s);
 }
 
+//MorseType::~MorseType() {
+//	delete letters;
+//}
+
 void MorseType::SetMIndex(int index, string value){
 	letters->at(index) = value;
 }
@@ -18,8 +22,8 @@ int MorseType::GetMSize() {
 
 string MorseType::OutputAsString() {
 	string morse = "";
-
-	for (int i = 0; i <= (*letters).size(); i++) {
+	
+	for (int i = 0; i <= letters->size()-1; i++) {
 		morse += (GetMIndex(i) + " ");
 	}
 

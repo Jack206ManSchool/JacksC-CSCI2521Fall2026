@@ -7,17 +7,35 @@ using namespace std;
 
 int main() {
 
-	MorseConverter mc = MorseConverter(); 
+	MorseConverter mc = MorseConverter();
+	string selection = "";
 	string input = "";
 
-	// Numbers: 48-57 Letters (Upper): 65-90 Letters (lower): 97-122
-	getline(cin, input);
+	while (selection != "3") {
+		
+		cout << "Type '1' for text to morse" << endl;
+		cout << "Type '2' for morse to text" << endl;
+		cout << "Type '3' to quit" << endl;
+		
+		getline(cin, selection);
 
-	MorseType morseInput = MorseType(input.size());
-	
-	morseInput.MorseToMorse(mc.convertToMorse(input));
+		if (selection == "1") {
+			getline(cin, input);
+			MorseType morseInput = MorseType(input.size());
+			morseInput.MorseToMorse(mc.convertToMorse(input));
+			cout << morseInput.OutputAsString() << endl;
+		}
+		else if (selection == "2") {
+		
+		}
+		else if (selection == "3") {
+		
+		}
+		else {
+			cout << "Invalid Selection! Please try again." << endl;
+		}
 
-	cout << morseInput.OutputAsString() << endl;
+	}
 
 	return 0;
 }
