@@ -2,8 +2,7 @@
 
 MorseType::MorseType(int s) {
 	size = s;
-	string letters[size];
-	this->letters = letters;
+	this->letters = new string[s];
 }
 
 void MorseType::SetMIndex(int index, string value){
@@ -28,11 +27,11 @@ string MorseType::OutputAsString() {
 	return morse;
 }
 
-string MorseType::OutputLettersRaw() {
+string* MorseType::OutputLettersRaw() {
 	return letters;
 }
 
 void MorseType::MorseToMorse(MorseType morse2) {
 	letters = morse2.OutputLettersRaw();
-	size = letters.size();
+	size = (*letters).size();
 }

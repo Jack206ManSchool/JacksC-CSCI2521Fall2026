@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 
 using namespace std;
@@ -12,6 +13,6 @@ class MorseType {
 		void MorseToMorse(MorseType morse2);
 	private:
 		int size;
-		string letters[0];
-		string OutputLettersRaw();
+		string* letters;
+		string* OutputLettersRaw();
 };
