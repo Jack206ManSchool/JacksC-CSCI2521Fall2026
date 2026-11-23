@@ -28,7 +28,6 @@ int main() {
 		else if (selection == "2") {
 			getline(cin, input);
 			MorseType morseInput = MorseType(input);
-			cout << "Test!" << endl;
 			cout << mc.convertToLetters(morseInput) << endl;
 		}
 		else if (selection == "3") {

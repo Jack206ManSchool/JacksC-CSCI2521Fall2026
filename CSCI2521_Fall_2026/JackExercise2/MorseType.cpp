@@ -7,13 +7,12 @@ MorseType::MorseType(int s = 0) {
 MorseType::MorseType(string input) {
 	letters = new vector<string>(0);
 	int i = 0;
-	input = " " + input + " ";
+	input = input + "  ";
 
-	while (input.find(' ', i) != string::npos) {
-		letters->push_back(input.substr(i, input.find(' ', i)));
-		cout << letters->at(i) << endl;
-		i = (input.find(' ', i));
-		cout << i << endl;
+	while (input.find(' ') != string::npos) {
+		letters->push_back(input.substr(0, input.find(' ')));
+		input = input.substr(input.find(' ') + 1);
+		i++;	
 	}
 
 }

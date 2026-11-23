@@ -44,7 +44,8 @@ string MorseConverter::numString(char letter) {
 	else if (letter == 88) { return "-..-"; }
 	else if (letter == 89) { return "-.--"; }
 	else if (letter == 90) { return "--.."; }
-	else { return "/ "; }
+	else if (letter == 32) { return "/ "; }
+	else { return "blank"; }
 
 }
 
@@ -86,7 +87,7 @@ char MorseConverter::stringNum(string letter) {
 	else if (letter == "-..-") { return 88; }
 	else if (letter == "-.--") { return 89; }
 	else if (letter == "--..") { return 90; }
-	else { return 137; }
+	else { return 32; }
 
 }
 
@@ -102,9 +103,15 @@ string MorseConverter::convertToLetters(MorseType in) {
 
 MorseType MorseConverter::convertToMorse(string in) {
 	MorseType morse = MorseType(in.length());
+	int skips = 0;
 
 	for (int i = 0; i <= in.length() - 1; i++) {
-		morse.SetMIndex(i, (numString(in.at(i))));
+		if(numString(in.at(i)) == "blank") {
+			skips += 1;
+		}
+		else {
+			morse.SetMIndex(i - skips, (numString(in.at(i))));
+		}
 	}
 
 	return morse;
