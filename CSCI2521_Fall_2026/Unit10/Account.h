@@ -27,6 +27,7 @@ public:
     bool withdraw(double amount);
 
     virtual void closeOfBusiness();
+    virtual void save();
 
     double getBalance() const;
     string getAccountNumber() const;

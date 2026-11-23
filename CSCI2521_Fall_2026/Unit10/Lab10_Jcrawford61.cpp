@@ -1,3 +1,10 @@
+/**
+ * @file Lab10_Jcrawford61.cpp
+ * @author Jack Crawford
+ * @date 2026-11-23
+ * @brief A banking simulation interacting demonstrating inheritance, this time with saving!
+ */
+
 #include<iostream>
 #include "SavingsAccount.h"
 
@@ -13,8 +20,13 @@ void printInvalidAmountMessage();
 const int DEPOSIT = 1;
 const int WITHDRAWAL = 2;
 const int CLOSE_OF_BUSINESS = 3;
-const int QUIT = 4;
+const int SAVE = 4;
+const int QUIT = 5;
 
+/**
+ * @brief Entry point for banking program
+ * @return 0 to indicate success.
+ */
 int main()
 {
     // just use dummy data for now for the customer and the account
@@ -40,6 +52,10 @@ int main()
             break;
         case CLOSE_OF_BUSINESS:
             account->closeOfBusiness();
+            account->save();
+            break;
+        case SAVE:
+            account->save();
             break;
         }
 
@@ -54,6 +70,7 @@ void printMenu()
     cout << DEPOSIT << ". Make a deposit" << endl;
     cout << WITHDRAWAL << ". Make a withdrawal" << endl;
     cout << CLOSE_OF_BUSINESS << ". Close of Business" << endl;
+    cout << SAVE << ". Save to txt" << endl;
     cout << QUIT << ". Quit" << endl;
 }
 

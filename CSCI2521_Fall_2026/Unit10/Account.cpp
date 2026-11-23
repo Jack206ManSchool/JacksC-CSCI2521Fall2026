@@ -1,3 +1,10 @@
+/**
+ * @file Account.cpp
+ * @author Jack Crawford
+ * @date 2026-11-23
+ * @brief Code for the Account Class
+ */
+
 #include "Account.h"
 
 /// <summary>
@@ -9,6 +16,11 @@ Account::Account()
     balance = 0.0;
     owner = Customer();
 }
+
+/**
+ * @brief Virtual for Savings Accout Save
+ */
+void Account::save() {};
 
 /// <summary>
 /// Parameterized constructor
