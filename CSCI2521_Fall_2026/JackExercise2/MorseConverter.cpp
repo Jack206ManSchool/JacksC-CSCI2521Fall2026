@@ -121,7 +121,9 @@ string MorseConverter::convertToLetters(MorseType in) {
 	string translated = "";
 
 	for (int i = 0; i <= in.GetMSize() - 1; i++) {
-		translated += (stringNum(in.GetMIndex(i)));
+		if (in.GetMIndex(i) != "Blank!") {
+			translated += (stringNum(in.GetMIndex(i)));
+		}
 	}
 
 	return translated;
@@ -133,6 +135,7 @@ string MorseConverter::convertToLetters(MorseType in) {
   * @return MorseType
 */
 MorseType MorseConverter::convertToMorse(string in) {
+	in = in.substr(0, 50);
 	MorseType morse = MorseType(in.length());
 	int skips = 0;
 

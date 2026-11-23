@@ -13,7 +13,12 @@
   * @return none (void)
 */
 MorseType::MorseType(int s = 0) {
-	letters = new vector<string>(s);
+	if (s <= maxSize) {
+		letters = new vector<string>(s);
+	}
+	else {
+		letters = new vector<string>(50);
+	}
 }
 
 /**
@@ -25,11 +30,18 @@ MorseType::MorseType(string input) {
 	letters = new vector<string>(0);
 	int i = 0;
 	input = input + "  ";
+	string emptyCheck;
 
-	while (input.find(' ') != string::npos) {
-		letters->push_back(input.substr(0, input.find(' ')));
+	while (input.find(' ') != string::npos && letters->size() <= maxSize) {
+		emptyCheck = input.substr(0, input.find(' '));
+		if (emptyCheck != "") {
+			letters->push_back(input.substr(0, input.find(' ')));
+		}
+		else {
+			letters->push_back("Blank!");
+		}
 		input = input.substr(input.find(' ') + 1);
-		i++;	
+		i++;
 	}
 
 }

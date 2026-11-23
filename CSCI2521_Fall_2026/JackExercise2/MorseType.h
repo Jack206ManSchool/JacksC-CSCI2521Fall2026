@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 #include <vector>
-#include <iostream>
 
 using namespace std;
 
@@ -17,4 +16,5 @@ class MorseType {
 	private:
 		vector<string>* letters;
 		vector<string>* OutputLettersRaw();
+		const int maxSize = 50;
 };
