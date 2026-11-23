@@ -9,7 +9,6 @@ class MorseType {
 	public:
 		MorseType(int s);
 		MorseType(string s);
-		//~MorseType();
 		void SetMIndex(int index, string value);
 		string GetMIndex(int index);
 		int GetMSize();

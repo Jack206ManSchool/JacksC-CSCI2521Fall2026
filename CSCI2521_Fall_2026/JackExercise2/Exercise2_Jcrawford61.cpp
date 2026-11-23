@@ -1,3 +1,10 @@
+/**
+ * @file Exercise2_Jcrawford61.cpp
+ * @author Jack Crawford
+ * @date 2026-11-22
+ * @brief This program translates text to morse code, as well as morse code to text
+ */
+
 #include <iostream>
 #include <string>
 #include "MorseConverter.h"
@@ -5,6 +12,11 @@
 
 using namespace std;
 
+/**
+ * @brief Entry point for morse translator.
+ * @param None
+ * @return 0 to indicate success.
+ */
 int main() {
 
 	MorseConverter mc = MorseConverter();

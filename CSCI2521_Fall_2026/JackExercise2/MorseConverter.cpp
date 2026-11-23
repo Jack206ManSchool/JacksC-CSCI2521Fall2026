@@ -1,7 +1,23 @@
+/**
+ * @file MorseConverter.cpp
+ * @author Jack Crawford
+ * @date 2026-11-22
+ * @brief The code that does the text to morse code and morse code to text
+ */
+
 #include "MorseConverter.h"
 
+/**
+   * @brief MorseConverter constructor
+   * @return none (void)
+*/
 MorseConverter::MorseConverter(){};
 
+/**
+  * @brief Returns the char as a morse code character string
+  * @param char letter (letter to convert)
+  * @return string
+*/
 string MorseConverter::numString(char letter) {
 
 	if (letter >= 97) {
@@ -49,6 +65,11 @@ string MorseConverter::numString(char letter) {
 
 }
 
+/**
+* * @brief Returns the morse code letter as a char
+  * @param string letter (morse letter to convert)
+  * @return char
+*/
 char MorseConverter::stringNum(string letter) {
 
 	if (letter == "-----") { return 48; }
@@ -91,6 +112,11 @@ char MorseConverter::stringNum(string letter) {
 
 }
 
+/**
+* * @brief Returns the morse code MorseType into a readable text string
+  * @param MorseType in (morse to convert to string)
+  * @return string
+*/
 string MorseConverter::convertToLetters(MorseType in) {
 	string translated = "";
 
@@ -101,6 +127,11 @@ string MorseConverter::convertToLetters(MorseType in) {
 	return translated;
 }
 
+/**
+* * @brief Returns the text converted to morse code as a MorseType
+  * @param string in (string to convert to morse)
+  * @return MorseType
+*/
 MorseType MorseConverter::convertToMorse(string in) {
 	MorseType morse = MorseType(in.length());
 	int skips = 0;
